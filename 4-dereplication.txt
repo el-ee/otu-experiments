@@ -1,0 +1,3 @@
+# getting rid of duplicates to speed up clustering algorithm
+
+usearch -derep_fulllength all-samples/all_samples.fasta -output all-samples/all_samples_derep.fasta -sizeout

@@ -1,0 +1,5 @@
+# OTU clustering; this uses the default 97% match to create otus. 
+
+# for our data, 8701 otus were created at the 97% match level
+
+usearch -cluster_otus all-samples/all_samples_sorted.fasta -otus otus/otus1.fasta

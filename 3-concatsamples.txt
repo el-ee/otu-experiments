@@ -1,0 +1,3 @@
+# putting all the samples together
+
+cat filtered_a/*.fasta > all-samples/all_samples.fasta

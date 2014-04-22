@@ -1,0 +1,3 @@
+# Abundance sort and discard singletons
+
+usearch -sortbysize all-samples/all_samples_derep.fasta -output all-samples/unique_reads_sorted.fasta -minsize 2

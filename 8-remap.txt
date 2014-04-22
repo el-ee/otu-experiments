@@ -1,0 +1,12 @@
+# remap otus back to the original file that contains all the samples -- determine which samples contain which otus
+
+# notes about this, "Note that a given read may match two or more OTUs at the given identity threshold. In such cases, usearch_global will tend to assign the read to the OTU with highest identity and will break ties arbitrarily."
+
+
+usearch -usearch_global all-samples/all_samples_labeled.fasta -db otus/otus_numbered.fasta -strand plus -id 0.97 -uc readmap_labels.uc
+
+# and after it's done: "The uc output file format is suggested as this is the only USEARCH output file format that reports query sequences that did not match the database. You can use grep to find how many reads did not match by counting the lines that start with an N (no-hit records): grep -c "^N" readmap.uc"
+
+# for our file, this many of the original reads did not match any otus: 1753323 (!!!?!?)
+
+# and run with the labeled file: 1753323 (yay the same!)
