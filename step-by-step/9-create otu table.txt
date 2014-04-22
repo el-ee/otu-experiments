@@ -1,0 +1,23 @@
+# create otu table (count reads per sample matching otu x, one line per otu, one column per sample) from the map file (1 line per *read* with all data about it in columns out from there - match, etc.)
+
+python python_scripts/uc2otutab.py readmap_labels.uc > otu_table.txt
+
+
+
+# then decided to modify this script to keep the nohit lines under a OTU called 'N' 
+# modifications to python script are just these lines wherein previously, anything 
+# not matching H was skipped over:
+#
+# global OTUs, Samples, OTUTable
+#	if uc.Type != 'H':
+#		# modified to keep no hits, under OTU N
+#		OTUId = uc.Type
+#	else:
+#		OTUId = uc.TargetLabel
+
+
+python python_scripts/uc2otutab_keepNH.py readmap_labels.uc > otu_table_N.txt
+
+# background from usearch website: what is a no hit? "Some reads may not match any OTU for these reasons: (1) the read is chimeric, (2) the read has more than 3% errors, (3) the read has a singleton sequence so was discarded."
+
+
